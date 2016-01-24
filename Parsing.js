@@ -4,7 +4,6 @@ var replace=JSON.parse(list)/* Ex. 'replace.tag' gives replacement string for ta
 var ifile=fs.readFileSync("input.html")
 
 function parseTheString(strp){
-	strp = tagParse(strp,"<p>","\n");
 	for (var tag in replace) {
     	strp = tagParse(strp,tag,replace[tag]);
 	}
