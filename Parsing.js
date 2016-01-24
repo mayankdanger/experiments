@@ -14,7 +14,9 @@ function tagParse(strp,tag,Replacement){
 	var Str = strp.split(tag);
 	var strRet = Str[0];
 	for(var i=1 ; i<Str.length ; i++){
-		strRet = strRet + Replacement + Str[i];
+		var temp = Str[i].indexOf(">");
+		var fstr = Str[i].substr(temp+1);
+		strRet = strRet + Replacement + fstr;
 	}
 	return strRet;
 }
