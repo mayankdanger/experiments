@@ -1,37 +1,22 @@
-/*
-	<html>     	-> null
-	<br>    	-> \n
-	<p>    		-> \n
-	<img> 		-> store in seperate array
-	hyperlink	-> store in seperate array
-*/
-
-var str = "<p> Lo hogayi jugaad </p> hbkas <br> sadkjasd <p> khbkafs </p> ";
+var fs=require('fs')
+var list=fs.readFileSync("replace.json")
+var replace=JSON.parse(list)/* Ex. 'replace.tag' gives replacement string for tag */
+var ifile=fs.readFileSync("input.html")
 
 function parseTheString(strp){
-
 	strp = tagParse(strp,"<p>","\n");
-	strp = tagParse(strp,"</p>","");
-	strp = tagParse(strp,"<br>","\n");
-
+	for (var tag in replace) {
+    	strp = tagParse(strp,tag,replace[tag]);
+	}
 	return strp;
 }
 
 function tagParse(strp,tag,Replacement){
-
-
 	var Str = strp.split(tag);
 	var strRet = Str[0];
-
-	//console.log(StartStr);
-
 	for(var i=1 ; i<Str.length ; i++){
-		//console.log(Str[i]);
 		strRet = strRet + Replacement + Str[i];
-		//console.log(strRet);
 	}
-
 	return strRet;
 }
-
-console.log(parseTheString(str));
+console.log(parseTheString(ifile.toString()));
