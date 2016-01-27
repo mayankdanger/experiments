@@ -7,7 +7,7 @@ var table=[]
 
 function parseTag(str){
 	var repStr="";
-	k=str.split(/ +| *=+ */ );
+	k=str.split(/" +| *=+ */);
 	var tag_name=k[0]
 	var jsonstr="{"
 	for(var i=1;i<k.length;i++){
