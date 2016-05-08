@@ -1,0 +1,11 @@
+{
+	"html":{"":""},
+	"p":{"":"\n",
+		"font":"getfont()",
+		"background":"getImg()"
+	},
+	"br":{"":"\n"},
+	"font":{
+
+	}
+}

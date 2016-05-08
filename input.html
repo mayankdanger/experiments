@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Online Judge</title>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="container">
+  <div id="nav-top" class="row navbar">
+    <div id="logo" class="col-md-2">logo</div>
+    <ul class="nav nav-pills">
+      <li> <a href="index.html" class="white"> <span class="glyphicon glyphicon-home red"></span> Home </a> </li>
+      <li> <a href="about.html" class="white"> <span class="glyphicon glyphicon-info-sign"></span> About </a> </li>
+    </ul>
+  </div>
+  <div id="mid" class="row">
+    <div class="col-md-6">
+      <div id="code-con">
+        <div class="title">Code Editor</div>
+        <div id="editor">#include
+          using namespace std;
+          
+          int main() {
+          // your code goes here
+          return 0;
+          } </div>
+        <script src="js/ace/src-min/ace.js" type="text/javascript" charset="utf-8"></script> 
+        <script>
+        var editor = ace.edit("editor");
+   		editor.session.setMode("ace/mode/c_cpp");
+    </script>
+        <div id="button-tray" class="row">
+          <div class="col-md-4">
+            <button type="button" class="btn btn-primary">Compile</button>
+            <button type="button" class="btn btn-success">Run</button>
+          </div>
+          <div class="col-md-6 pull-right">Or select File,
+            <button type="button" class="btn btn-info"> <span class="glyphicon glyphicon-file red"> </span>Browse </button>
+            here! </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+    <div class="row">
+    	<div id="result-con" class="col-md-10"><div class="title">stdout</div></div><div class="col-md-2"></div>
+    </div>
+    <div class="row">
+    	<div id="error-con" class="col-md-10"><div class="title">stderr</div></div><div class="col-md-2"></div>
+     </div>
+    </div>
+  </div>
+  <div id="bottom-bar" class="nav navbar"> footer</div>
+</div>
+</body>
+</html>
